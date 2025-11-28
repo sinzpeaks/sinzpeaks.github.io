@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" width="1200" height="1200" role="img" aria-labelledby="title desc">
+	<title id="title">SINz Peaks — Vector Sigma</title>
+	<desc id="desc">Vector approximation of your Sigma logo, centered, transparent background.</desc>
+
+	<!-- Transparent background -->
+	<!-- Single filled path for geometric Sigma, centered -->
+	<g transform="translate(0,0)">
+		<!-- Adjust 'd' if you want to tweak shape; fill can be changed -->
+		<path d="M 840 180 L 360 180 L 620 520 L 360 860 L 840 860 L 840 760 L 520 760 L 760 520 L 520 260 L 840 260 Z" fill="#000000"/>
+	</g>
+</svg>
