@@ -1,28 +1,28 @@
 name: Deploy to GitHub Pages
 
-# Trigger on push to main (change branch if you use another)
 on:
   push:
     branches:
-      - main
+      - main   # change if your default branch is different
 
-# Required permissions for Pages deployment
+# These permissions are required for the Pages deploy action to succeed
 permissions:
-  contents: read        # read repo contents
-  pages: write          # allow Pages deployment
-  id-token: write       # allow actions/deploy-pages to create token
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build-and-upload:
     runs-on: ubuntu-latest
     name: Build (upload artifact)
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # If you have a build step (npm, hugo, jekyll, etc.) add it here.
-      # For plain static HTML you can skip build steps.
-      # Example (uncomment if you use Node to build):
+      # --- Optional build steps ---
+      # If you have a build step (npm/hugo/jekyll), enable and edit these.
+      # Example Node build (uncomment if needed):
       # - name: Setup Node
       #   uses: actions/setup-node@v4
       #   with:
@@ -32,13 +32,14 @@ jobs:
       #     npm ci
       #     npm run build
       #
-      # If you used a build command that outputs to 'dist', change the path below to './dist'
+      # If you build to ./dist or ./public, change the 'path' value below to that folder.
 
       - name: Upload Pages artifact
+        # IMPORTANT: use upload-pages-artifact@v1 (not the deprecated upload-artifact)
         uses: actions/upload-pages-artifact@v1
         with:
-          # Path to the files to publish. Use './' to publish repo root.
-          path: './'
+          # set this to the folder that contains the site to publish
+          path: './'   # or './dist' or './public' etc.
 
   deploy:
     runs-on: ubuntu-latest
