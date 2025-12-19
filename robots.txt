@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://sinzpeaks.github.io/sinzpeaks/sitemap.xml
