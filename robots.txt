@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://sinzpeaks.github.io/sinzpeaks/sitemap.xml
+Sitemap: https://sinzpeaks.github.io/sitemap.xml
